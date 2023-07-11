@@ -1,0 +1,4 @@
+[[ d1_databases ]]
+binding = "DB"
+database_name = "d1-test"
+database_id = "25db91f1-f76b-4cc8-aad2-000a8f0f3c6f"

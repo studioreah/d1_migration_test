@@ -1,0 +1,22 @@
+{
+  "name": "d1_actions",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "packageManager": "pnpm@8.6.5",
+  "scripts": {
+    "migrate:apply": "wrangler d1 migrations apply d1-test",
+    "wrangler": "wrangler"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "better-sqlite3": "^8.4.0",
+    "typescript": "^5.0.4",
+    "wrangler": "^3.1.1"
+  },
+  "engines": {
+    "pnpm": ">=8.6.5"
+  }
+}

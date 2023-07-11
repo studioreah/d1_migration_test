@@ -1,0 +1,23 @@
+name: Migrate Database Dev to Cloudflare D1
+on:
+  workflow_dispatch:
+  push:
+      branches: main
+
+jobs:
+  deploy:
+    name: Migrate D1 Database with Wrangler
+    runs-on: ubuntu-latest
+    env:
+      NO_D1_WARNING: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2.2.2
+      - name: Install Deps
+        run: pnpm install --frozen-lockfile
+      - name: Run Migration
+        run: pnpm run migrate:apply
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
